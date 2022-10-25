@@ -1,0 +1,127 @@
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+
+
+import { NextApiRequest, NextApiResponse } from 'next';
+
+const data =
+    [
+        {
+            id: 1,
+            name: "Commodo leo sed porta",
+            minPrice: '15.00',
+            maxPrice: '22.00',
+            rate: '0',
+            imgSrc1: 'https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-8_360x360.jpg?v=1636280404',
+            imgSrc2: 'https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-8.1_360x360.jpg?v=1636280405',
+            descriptions: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+            productType: "Dog Apparel",
+            Vendor: "Paw Nutrition",
+            categories: "Cat Food,Cat Toys,Dog Food,Dog Toys,Fish Food",
+            tag: "Dog Toy",
+
+        },
+        {
+            id: 2,
+            name: "Purus consequat congue sit",
+            minPrice: "45.00",
+            maxPrice: "45.00",
+            rate: "5",
+            imgSrc1: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-17_360x360.jpg?v=1636280993",
+            imgSrc2: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-17.1_360x360.jpg?v=1636280993",
+            descriptions: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+            productType: "Dog Apparel",
+            Vendor: "Paw Nutrition",
+            categories: "Cat Food,Cat Toys,Dog Food,Dog Toys,Fish Food",
+            tag: "Dog Toy",
+        },
+        {
+            id: 3,
+            name: "Morbi vel arcu scelerisque",
+            minPrice: "45.00",
+            maxPrice: "45.00",
+            rate: "0",
+            imgSrc1: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-16_360x360.jpg?v=1636280915",
+            imgSrc2: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-16.1_360x360.jpg?v=1636280915",
+            descriptions: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+            productType: "Dog Apparel",
+            Vendor: "Paw Nutrition",
+            categories: "Cat Food,Cat Toys,Dog Food,Dog Toys,Fish Food",
+            tag: "Dog Toy",
+        },
+        {
+            id: 4,
+            name: "Morbi vel arcu scelerisque",
+            minPrice: "49.00",
+            maxPrice: "49.00",
+            rate: "0",
+            imgSrc1: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-26_360x360.jpg?v=1636281613",
+            imgSrc2: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-26.1_360x360.jpg?v=1636281612",
+            descriptions: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+            productType: "Dog Apparel",
+            Vendor: "Paw Nutrition",
+            categories: "Cat Food,Cat Toys,Dog Food,Dog Toys,Fish Food",
+            tag: "Dog Toy",
+        },
+        {
+            id: 5,
+            name: "Morbi vel arcu scelerisque",
+            minPrice: "85.00",
+            maxPrice: "85.00",
+            rate: "",
+            imgSrc1: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-14_360x360.jpg?v=1636280845",
+            imgSrc2: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-14.1_360x360.jpg?v=1636280845",
+            descriptions: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+            productType: "Dog Apparel",
+            Vendor: "Paw Nutrition",
+            categories: "Cat Food,Cat Toys,Dog Food,Dog Toys,Fish Food",
+            tag: "Dog Toy",
+        },
+        {
+            id: 6,
+            name: "Nam justo libero porta ege",
+            minPrice: "85.00",
+            maxPrice: "85.00",
+            rate: "",
+            imgSrc1: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-11_360x360.jpg?v=1636280721",
+            imgSrc2: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-12.1_360x360.jpg?v=1636280721",
+            descriptions: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+            productType: "Dog Apparel",
+            Vendor: "Paw Nutrition",
+            categories: "Cat Food,Cat Toys,Dog Food,Dog Toys,Fish Food",
+            tag: "Dog Toy",
+        },
+        {
+            id: 7,
+            name: "Nam justo libero porta ege",
+            minPrice: "85.00",
+            maxPrice: "85.00",
+            rate: "4.5",
+            imgSrc1: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-10_b98a5ca2-321c-412b-af32-a2a4c48679d3_360x360.jpg?v=1636280650",
+            imgSrc2: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-10.1_360x360.jpg?v=1636280651",
+            descriptions: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+            productType: "Dog Apparel",
+            Vendor: "Paw Nutrition",
+            categories: "Cat Food,Cat Toys,Dog Food,Dog Toys,Fish Food",
+            tag: "Dog Toy",
+        },
+        {
+            id: 8,
+            name: "Etiam commodo leo sed",
+            minPrice: "55.00",
+            maxPrice: "62.00",
+            rate: "4",
+            imgSrc1: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-9_85b3789a-41cf-43b4-bca2-5b4dd73e5fb5_360x360.jpg?v=1636280563",
+            imgSrc2: "https://cdn.shopify.com/s/files/1/0016/2915/9471/products/product-8_27e6c315-8aa5-425e-bf4a-69c8c8742201_360x360.jpg?v=1636280571",
+            descriptions: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+            productType: "Dog Apparel",
+            Vendor: "Paw Nutrition",
+            categories: "Cat Food,Cat Toys,Dog Food,Dog Toys,Fish Food",
+            tag: "Dog Toy",
+        }
+    ]
+
+
+
+export default function getAllIntroduct(req: NextApiRequest, res: NextApiResponse) {
+    res.json(data);
+}
